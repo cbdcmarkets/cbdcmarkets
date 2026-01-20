@@ -1,5 +1,3 @@
-## CBDC Markets
+## CBDC Markets - An Independent CBDC Index & Market Intelligence
 
-<!--
-INdependent CBDC Index & Market Intelligence
--->
+
