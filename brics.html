@@ -30,8 +30,8 @@
     <header>
         <h1>BRICS CBDC Index</h1>
         <p>
-            An independent reference benchmark tracking the readiness and adoption
-            of central bank digital currencies across Brazil, Russia, India, China, and South Africa.
+            An independent benchmark tracking central bank digital currency (CBDC)
+            readiness among BRICS nations.
         </p>
         <p>
             <a href="methodology.html">View Methodology</a>
@@ -50,7 +50,7 @@
             </div>
             <div class="box">
                 <strong>Last Updated</strong>
-                20 Jan 2026
+                <span id="lastUpdated"></span>
             </div>
             <div class="box">
                 <strong>Update Frequency</strong>
@@ -60,9 +60,9 @@
     </section>
 
     <section>
-    <h2>Index Performance</h2>
-    <canvas id="bricsChart" width="800" height="400"></canvas>
-</section>
+        <h2>Index Performance</h2>
+        <canvas id="bricsChart" width="800" height="400"></canvas>
+    </section>
 
     <section>
         <h2>Index Constituents</h2>
@@ -88,90 +88,63 @@
         <h2>Index Interpretation</h2>
         <p>
             The BRICS CBDC Index reflects the relative progress of CBDC initiatives
-            among the five member countries. China leads with a live deployment,
-            while India and Brazil continue advanced pilot programs. Russia and
-            South Africa are at earlier stages of development.
+            among Brazil, Russia, India, China, and South Africa. China leads with a
+            live deployment, while India and Brazil continue advanced pilot programs.
+            Russia and South Africa are at earlier stages of development.
         </p>
         <p>
-            This index provides a neutral benchmark and does not predict outcomes
-            or represent tradable instruments.
+            This index follows the same methodology as the Global CBDC Readiness Index (GCRI)
+            and serves as a neutral benchmark. It does not predict outcomes or represent
+            tradable instruments.
         </p>
     </section>
 
     <footer>
-        <p>
-            © CBDC Markets · BRICS CBDC Index
-        </p>
-        <p>
-            This index is an informational reference benchmark only and does not
-            constitute a financial product or investment advice.
-        </p>
+        <p>© CBDC Markets · BRICS CBDC Index</p>
+        <p>This index is an informational reference benchmark only and does not constitute financial advice.</p>
     </footer>
 
 </div>
 
-<!-- Chart.js Library -->
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const ctx = document.getElementById('bricsChart').getContext('2d');
+    // Auto-update "Last Updated" date
+    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', optionsDate);
 
-const bricsChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [
-            'Dec 2026', 'Jan 2026'
-        ],
-        datasets: [{
-            label: 'BRICS CBDC Index Value',
-            data: [700, 710, 720, 735, 750, 762],
-            borderColor: '#0073e6',
-            backgroundColor: 'rgba(0, 115, 230, 0.1)',
-            borderWidth: 2,
-            tension: 0.3,
-            fill: true,
-            pointRadius: 4,
-            pointBackgroundColor: '#0073e6'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-                labels: {
-                    font: {
-                        size: 14
-                    }
-                }
-            },
-            title: {
-                display: true,
-                text: 'BRICS CBDC Index Performance',
-                font: {
-                    size: 18
-                }
-            }
+    // Chart.js for BRICS
+    const ctx = document.getElementById('bricsChart').getContext('2d');
+    const bricsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026'],
+            datasets: [{
+                label: 'BRICS CBDC Index Value',
+                data: [700, 710, 720, 735, 750, 762],
+                borderColor: '#28a745',
+                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#28a745'
+            }]
         },
-        scales: {
-            y: {
-                beginAtZero: false,
-                title: {
-                    display: true,
-                    text: 'Index Value'
-                }
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels:{font:{size:14}} },
+                title: { display: true, text: 'BRICS CBDC Index Performance', font:{size:18} }
             },
-            x: {
-                title: {
-                    display: true,
-                    text: 'Month'
-                }
+            scales: {
+                y: { beginAtZero: false, title: { display: true, text: 'Index Value' } },
+                x: { title: { display: true, text: 'Month' } }
             }
         }
-    }
-});
+    });
 </script>
-    
+
 </body>
 </html>
