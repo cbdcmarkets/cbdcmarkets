@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<!-- Header / Navigation -->
 <header class="site-header">
     <div class="nav-container">
         <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
@@ -18,20 +20,21 @@
                 <li><a href="methodology.html">Methodology</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://yourcustomblog.com" target="_blank">Blog</a></li>
             </ul>
         </nav>
     </div>
 </header>
+
 <div class="container">
 
     <header>
         <h1>Global CBDC Readiness Index (GCRI)</h1>
         <p>
-            An independent reference benchmark tracking the progress,
-            readiness, and adoption of central bank digital currencies.
+            An independent benchmark tracking the progress and adoption of central bank digital currencies globally.
         </p>
         <p>
-            <a href="methodology.html">Methodology</a>
+            <a href="methodology.html">View Methodology</a>
         </p>
     </header>
 
@@ -39,15 +42,15 @@
         <div class="snapshot">
             <div class="box">
                 <strong>Current Index Value</strong>
-                1,034.6
+                1034.6
             </div>
             <div class="box">
                 <strong>Base Value</strong>
-                1,000 (Jan 2026)
+                1000 (Jan 2026)
             </div>
             <div class="box">
                 <strong>Last Updated</strong>
-                20 Jan 2026
+                <span id="lastUpdated"></span>
             </div>
             <div class="box">
                 <strong>Update Frequency</strong>
@@ -56,11 +59,11 @@
         </div>
     </section>
 
-<section>
-    <h2>Index Performance</h2>
-    <canvas id="gcriChart" width="800" height="400"></canvas>
-</section>
-    
+    <section>
+        <h2>Index Performance</h2>
+        <canvas id="gcriChart" width="800" height="400"></canvas>
+    </section>
+
     <section>
         <h2>Index Constituents</h2>
         <table>
@@ -103,80 +106,51 @@
     </section>
 
     <footer>
-        <p>
-            © CBDC Markets · Global CBDC Readiness Index (GCRI)
-        </p>
-        <p>
-            This index is an informational reference benchmark only and does not
-            constitute a financial product or investment advice.
-        </p>
+        <p>© CBDC Markets · Global CBDC Readiness Index (GCRI)</p>
+        <p>This index is an informational reference benchmark only and does not constitute financial advice.</p>
     </footer>
 
 </div>
-    
-<!-- Chart.js Library -->
+
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const ctx = document.getElementById('gcriChart').getContext('2d');
+    // Auto-update "Last Updated" date
+    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', optionsDate);
 
-const gcriChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [
-            'Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 
-            'May 2026', 'Jun 2026'
-        ],
-        datasets: [{
-            label: 'GCRI Index Value',
-            data: [1000, 1012, 1021, 1030, 1025, 1034],
-            borderColor: '#0073e6',
-            backgroundColor: 'rgba(0, 115, 230, 0.1)',
-            borderWidth: 2,
-            tension: 0.3,
-            fill: true,
-            pointRadius: 4,
-            pointBackgroundColor: '#0073e6'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-                labels: {
-                    font: {
-                        size: 14
-                    }
-                }
-            },
-            title: {
-                display: true,
-                text: 'Global CBDC Readiness Index (GCRI) Performance',
-                font: {
-                    size: 18
-                }
-            }
+    // Chart.js for GCRI
+    const ctx = document.getElementById('gcriChart').getContext('2d');
+    const gcriChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026'],
+            datasets: [{
+                label: 'GCRI Index Value',
+                data: [980, 995, 1005, 1015, 1020, 1034],
+                borderColor: '#0073e6',
+                backgroundColor: 'rgba(0, 115, 230, 0.1)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#0073e6'
+            }]
         },
-        scales: {
-            y: {
-                beginAtZero: false,
-                title: {
-                    display: true,
-                    text: 'Index Value'
-                }
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels:{font:{size:14}} },
+                title: { display: true, text: 'Global CBDC Readiness Index (GCRI) Performance', font:{size:18} }
             },
-            x: {
-                title: {
-                    display: true,
-                    text: 'Month'
-                }
+            scales: {
+                y: { beginAtZero: false, title: { display: true, text: 'Index Value' } },
+                x: { title: { display: true, text: 'Month' } }
             }
         }
-    }
-});
+    });
 </script>
-    
+
 </body>
 </html>
