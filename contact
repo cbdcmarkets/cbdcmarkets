@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CBDC Markets</title>
+    <meta name="description" content="Contact CBDC Markets to get in touch with our team or submit queries regarding central bank digital currency indices.">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Header / Navigation -->
+<header class="site-header">
+    <div class="nav-container">
+        <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">GCRI Index</a></li>
+                <li><a href="brics.html">BRICS CBDC Index</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://yourcustomblog.com" target="_blank">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+
+    <header>
+        <h1>Contact CBDC Markets</h1>
+        <p>We welcome questions, feedback, or inquiries regarding our CBDC indices and research.</p>
+    </header>
+
+    <section>
+        <h2>Get in Touch</h2>
+        <p>You can reach us via the form below, or email us directly at <a href="mailto:contact@cbdcmarkets.com">contact@cbdcmarkets.com</a>.</p>
+
+        <!-- Contact Form (Formspree example) -->
+        <form action="https://formspree.io/f/yourformid" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your Name" required style="width:100%;padding:8px;margin-bottom:12px;"><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" required style="width:100%;padding:8px;margin-bottom:12px;"><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6" placeholder="Your Message" required style="width:100%;padding:8px;margin-bottom:12px;"></textarea><br>
+
+            <button type="submit" style="padding:10px 20px;background-color:#0073e6;color:white;border:none;cursor:pointer;">Send Message</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Our Location</h2>
+        <p>
+            CBDC Markets is a virtual research and analytics platform. For partnership inquiries or media contact, please use the email above.
+        </p>
+    </section>
+
+    <footer>
+        <p>© CBDC Markets · All rights reserved</p>
+        <p>CBDC Markets provides informational reference data only. This page does not constitute financial advice.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
