@@ -1,0 +1,62 @@
+name: Update CBDC Index JSON
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # runs daily at 01:00 UTC
+  workflow_dispatch:    # allows manual trigger
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y curl jq csvkit
+
+      - name: Fetch CSV from Google Sheet
+        run: |
+          curl -s 'https://docs.google.com/spreadsheets/d/1gudqR4b-vmZTyAAP1SowfybUsQugIyPtntO_wSoQzuk/edit?gid=0#gid=0' -o sheet.csv
+
+      - name: Generate JSON
+        run: |
+          # Get header (column names)
+          headers=$(head -1 sheet.csv)
+          IFS=',' read -ra cols <<< "$headers"
+
+          # Initialize JSON with lastUpdated
+          echo "{ \"lastUpdated\": \"$(date +%Y-%m-%d)\" }" > indexData.json
+
+          # Loop over all columns except Month
+          for i in "${!cols[@]}"; do
+            colName="${cols[$i]}"
+            if [ "$colName" != "Month" ]; then
+              jq --arg name "$colName" \
+                 '. + {($name): {"labels": [], "values": [], "currentValue":0, "baseValue":1000}}' indexData.json > temp.json
+              mv temp.json indexData.json
+            fi
+          done
+
+          # Process CSV rows
+          tail -n +2 sheet.csv | while IFS=, read -ra row; do
+            month="${row[0]}"
+            for i in "${!cols[@]}"; do
+              colName="${cols[$i]}"
+              if [ "$colName" != "Month" ]; then
+                value="${row[$i]}"
+                jq --arg m "$month" --arg v "$value" \
+                  '.[env.colName].labels += [$m] | .[env.colName].values += [($v|tonumber)] | .[env.colName].currentValue = ($v|tonumber)' indexData.json > temp.json
+                mv temp.json indexData.json
+              fi
+            done
+          done
+
+      - name: Commit and push updated JSON
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/indexData.json
+          git commit -m "Update indexData.json from Google Sheet"
+          git push
