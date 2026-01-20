@@ -120,12 +120,11 @@ const gcriChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [
-            'Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 
-            'May 2026', 'Jun 2026'
+            'Dec 2026', 'Jan 2026'
         ],
         datasets: [{
-            label: 'GCRI Index Value',
-            data: [1000, 1012, 1021, 1030, 1025, 1034],
+            label: 'BRICS CBDC Index Value',
+            data: [700, 710, 720, 735, 750, 762],
             borderColor: '#0073e6',
             backgroundColor: 'rgba(0, 115, 230, 0.1)',
             borderWidth: 2,
@@ -149,7 +148,7 @@ const gcriChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Global CBDC Readiness Index (GCRI) Performance',
+                text: 'BRICS CBDC Index Performance',
                 font: {
                     size: 18
                 }
