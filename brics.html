@@ -61,7 +61,7 @@
 
     <section>
     <h2>Index Performance</h2>
-    <canvas id="gcriChart" width="800" height="400"></canvas>
+    <canvas id="bricsChart" width="800" height="400"></canvas>
 </section>
 
     <section>
@@ -114,9 +114,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const ctx = document.getElementById('gcriChart').getContext('2d');
+const ctx = document.getElementById('bricsChart').getContext('2d');
 
-const gcriChart = new Chart(ctx, {
+const bricsChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [
