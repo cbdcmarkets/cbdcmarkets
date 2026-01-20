@@ -1,128 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRICS CBDC Index | CBDC Markets</title>
-    <meta name="description" content="The BRICS CBDC Index tracks central bank digital currency readiness and adoption across Brazil, Russia, India, China, and South Africa.">
-    <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRICS CBDC Index | CBDC Markets</title>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<!-- Header / Navigation -->
 <header class="site-header">
-    <div class="nav-container">
-        <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html">GCRI Index</a></li>
-                <li><a href="brics.html">BRICS CBDC Index</a></li>
-                <li><a href="methodology.html">Methodology</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
+<div class="nav-container">
+    <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">GCRI Index</a></li>
+            <li><a href="brics.html">BRICS CBDC Index</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>
 </header>
 
 <div class="container">
+<header>
+    <h1>BRICS CBDC Index</h1>
+    <p>Tracking CBDC readiness in Brazil, Russia, India, China, and South Africa.</p>
+    <p><a href="methodology.html">View Methodology</a></p>
+</header>
 
-    <header>
-        <h1>BRICS CBDC Index</h1>
-        <p>
-            An independent benchmark tracking central bank digital currency (CBDC)
-            readiness among BRICS nations.
-        </p>
-        <p>
-            <a href="methodology.html">View Methodology</a>
-        </p>
-    </header>
+<section class="snapshot">
+    <div class="box">
+        <strong>Current Index Value</strong>
+        <span id="currentValue"></span>
+    </div>
+    <div class="box">
+        <strong>Base Value</strong>
+        <span id="baseValue"></span>
+    </div>
+    <div class="box">
+        <strong>Last Updated</strong>
+        <span id="lastUpdated"></span>
+    </div>
+    <div class="box">
+        <strong>Update Frequency</strong>
+        Quarterly
+    </div>
+</section>
 
-    <section>
-        <div class="snapshot">
-            <div class="box">
-                <strong>Current Index Value</strong>
-                762.4
-            </div>
-            <div class="box">
-                <strong>Base Value</strong>
-                700 (Jan 2026)
-            </div>
-            <div class="box">
-                <strong>Last Updated</strong>
-                <span id="lastUpdated"></span>
-            </div>
-            <div class="box">
-                <strong>Update Frequency</strong>
-                Quarterly
-            </div>
-        </div>
-    </section>
+<section>
+    <h2>Index Performance</h2>
+    <canvas id="bricsChart" width="800" height="400"></canvas>
+</section>
 
-    <section>
-        <h2>Index Performance</h2>
-        <canvas id="bricsChart" width="800" height="400"></canvas>
-    </section>
+<section>
+    <h2>Index Constituents</h2>
+    <table>
+        <thead><tr><th>Country</th><th>CBDC Status</th><th>Composite Score</th></tr></thead>
+        <tbody>
+            <tr><td>Brazil</td><td>Pilot</td><td>71</td></tr>
+            <tr><td>Russia</td><td>Pilot</td><td>68</td></tr>
+            <tr><td>India</td><td>Pilot</td><td>74</td></tr>
+            <tr><td>China</td><td>Live</td><td>89</td></tr>
+            <tr><td>South Africa</td><td>Research</td><td>42</td></tr>
+        </tbody>
+    </table>
+</section>
 
-    <section>
-        <h2>Index Constituents</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>CBDC Status</th>
-                    <th>Composite Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Brazil</td><td>Pilot</td><td>71</td></tr>
-                <tr><td>Russia</td><td>Pilot</td><td>68</td></tr>
-                <tr><td>India</td><td>Pilot</td><td>74</td></tr>
-                <tr><td>China</td><td>Live</td><td>89</td></tr>
-                <tr><td>South Africa</td><td>Research</td><td>42</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>Index Interpretation</h2>
-        <p>
-            The BRICS CBDC Index reflects the relative progress of CBDC initiatives
-            among Brazil, Russia, India, China, and South Africa. China leads with a
-            live deployment, while India and Brazil continue advanced pilot programs.
-            Russia and South Africa are at earlier stages of development.
-        </p>
-        <p>
-            This index follows the same methodology as the Global CBDC Readiness Index (GCRI)
-            and serves as a neutral benchmark. It does not predict outcomes or represent
-            tradable instruments.
-        </p>
-    </section>
-
-    <footer>
-        <p>© CBDC Markets · BRICS CBDC Index</p>
-        <p>This index is an informational reference benchmark only and does not constitute financial advice.</p>
-    </footer>
-
+<footer>
+    <p>© CBDC Markets · BRICS CBDC Index</p>
+</footer>
 </div>
 
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-    // Auto-update "Last Updated" date
-    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', optionsDate);
+fetch('data/indexData.json')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('currentValue').textContent = data.brics.currentValue;
+    document.getElementById('baseValue').textContent = data.brics.baseValue;
+    document.getElementById('lastUpdated').textContent = data.lastUpdated;
 
-    // Chart.js for BRICS
     const ctx = document.getElementById('bricsChart').getContext('2d');
-    const bricsChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026'],
+            labels: data.brics.labels,
             datasets: [{
                 label: 'BRICS CBDC Index Value',
-                data: [700, 710, 720, 735, 750, 762],
+                data: data.brics.values,
                 borderColor: '#28a745',
                 backgroundColor: 'rgba(40, 167, 69, 0.1)',
                 borderWidth: 2,
@@ -135,8 +102,8 @@
         options: {
             responsive: true,
             plugins: {
-                legend: { display: true, position: 'top', labels:{font:{size:14}} },
-                title: { display: true, text: 'BRICS CBDC Index Performance', font:{size:18} }
+                legend: { display: true, position: 'top' },
+                title: { display: true, text: 'BRICS CBDC Index Performance' }
             },
             scales: {
                 y: { beginAtZero: false, title: { display: true, text: 'Index Value' } },
@@ -144,7 +111,7 @@
             }
         }
     });
+});
 </script>
-
 </body>
 </html>
