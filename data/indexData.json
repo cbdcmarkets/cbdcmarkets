@@ -1,0 +1,15 @@
+{
+  "lastUpdated": "2026-01-20",
+  "gcri": {
+    "currentValue": 1034,
+    "baseValue": 1000,
+    "labels": ["Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026"],
+    "values": [980, 995, 1005, 1015, 1020, 1034]
+  },
+  "brics": {
+    "currentValue": 762,
+    "baseValue": 700,
+    "labels": ["Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026"],
+    "values": [700, 710, 720, 735, 750, 762]
+  }
+}
