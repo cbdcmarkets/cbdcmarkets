@@ -1,133 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global CBDC Readiness Index (GCRI) | CBDC Markets</title>
-    <meta name="description" content="The Global CBDC Readiness Index (GCRI) tracks the readiness and adoption of central bank digital currencies across selected economies.">
-    <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global CBDC Readiness Index (GCRI) | CBDC Markets</title>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <!-- Header / Navigation -->
 <header class="site-header">
-    <div class="nav-container">
-        <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html">GCRI Index</a></li>
-                <li><a href="brics.html">BRICS CBDC Index</a></li>
-                <li><a href="methodology.html">Methodology</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
+<div class="nav-container">
+    <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">GCRI Index</a></li>
+            <li><a href="brics.html">BRICS CBDC Index</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>
 </header>
 
 <div class="container">
+<header>
+    <h1>Global CBDC Readiness Index (GCRI)</h1>
+    <p>An independent benchmark tracking CBDC progress globally.</p>
+    <p><a href="methodology.html">View Methodology</a></p>
+</header>
 
-    <header>
-        <h1>Global CBDC Readiness Index (GCRI)</h1>
-        <p>
-            An independent benchmark tracking the progress and adoption of central bank digital currencies globally.
-        </p>
-        <p>
-            <a href="methodology.html">View Methodology</a>
-        </p>
-    </header>
+<section class="snapshot">
+    <div class="box">
+        <strong>Current Index Value</strong>
+        <span id="currentValue"></span>
+    </div>
+    <div class="box">
+        <strong>Base Value</strong>
+        <span id="baseValue"></span>
+    </div>
+    <div class="box">
+        <strong>Last Updated</strong>
+        <span id="lastUpdated"></span>
+    </div>
+    <div class="box">
+        <strong>Update Frequency</strong>
+        Quarterly
+    </div>
+</section>
 
-    <section>
-        <div class="snapshot">
-            <div class="box">
-                <strong>Current Index Value</strong>
-                1034.6
-            </div>
-            <div class="box">
-                <strong>Base Value</strong>
-                1000 (Jan 2026)
-            </div>
-            <div class="box">
-                <strong>Last Updated</strong>
-                <span id="lastUpdated"></span>
-            </div>
-            <div class="box">
-                <strong>Update Frequency</strong>
-                Quarterly
-            </div>
-        </div>
-    </section>
+<section>
+    <h2>Index Performance</h2>
+    <canvas id="gcriChart" width="800" height="400"></canvas>
+</section>
 
-    <section>
-        <h2>Index Performance</h2>
-        <canvas id="gcriChart" width="800" height="400"></canvas>
-    </section>
+<section>
+    <h2>Index Constituents</h2>
+    <table>
+        <thead>
+            <tr><th>Country</th><th>CBDC Status</th><th>Composite Score</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>China</td><td>Live</td><td>89</td></tr>
+            <tr><td>India</td><td>Pilot</td><td>74</td></tr>
+            <tr><td>Brazil</td><td>Pilot</td><td>71</td></tr>
+            <tr><td>Nigeria</td><td>Live</td><td>78</td></tr>
+            <tr><td>Bahamas</td><td>Live</td><td>81</td></tr>
+            <tr><td>Russia</td><td>Pilot</td><td>68</td></tr>
+            <tr><td>South Africa</td><td>Research</td><td>42</td></tr>
+            <tr><td>Sweden</td><td>Pilot</td><td>65</td></tr>
+            <tr><td>Singapore</td><td>Pilot</td><td>75</td></tr>
+            <tr><td>Canada</td><td>Research</td><td>55</td></tr>
+            <tr><td>France</td><td>Research</td><td>50</td></tr>
+            <tr><td>Australia</td><td>Research</td><td>53</td></tr>
+        </tbody>
+    </table>
+</section>
 
-    <section>
-        <h2>Index Constituents</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>CBDC Status</th>
-                    <th>Composite Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>China</td><td>Live</td><td>89</td></tr>
-                <tr><td>India</td><td>Pilot</td><td>74</td></tr>
-                <tr><td>Brazil</td><td>Pilot</td><td>71</td></tr>
-                <tr><td>Nigeria</td><td>Live</td><td>78</td></tr>
-                <tr><td>Bahamas</td><td>Live</td><td>81</td></tr>
-                <tr><td>Russia</td><td>Pilot</td><td>68</td></tr>
-                <tr><td>South Africa</td><td>Research</td><td>42</td></tr>
-                <tr><td>Sweden</td><td>Pilot</td><td>65</td></tr>
-                <tr><td>Singapore</td><td>Pilot</td><td>75</td></tr>
-                <tr><td>Canada</td><td>Research</td><td>55</td></tr>
-                <tr><td>France</td><td>Research</td><td>50</td></tr>
-                <tr><td>Australia</td><td>Research</td><td>53</td></tr>
-            </tbody>
-        </table>
-    </section>
+<section>
+    <h2>Index Interpretation</h2>
+    <p>The GCRI reflects CBDC progress globally. China leads with live deployment; others follow in pilot/research stages.</p>
+</section>
 
-    <section>
-        <h2>Index Interpretation</h2>
-        <p>
-            The expanded GCRI reflects the relative progress of CBDC initiatives
-            across leading economies. China leads with a live deployment,
-            while India, Brazil, Singapore, and Sweden continue advanced pilot programs.
-            Russia and other research-stage countries are included for completeness.
-        </p>
-        <p>
-            This index provides a neutral benchmark and does not predict future outcomes
-            or represent tradable instruments.
-        </p>
-    </section>
-
-    <footer>
-        <p>© CBDC Markets · Global CBDC Readiness Index (GCRI)</p>
-        <p>This index is an informational reference benchmark only and does not constitute financial advice.</p>
-    </footer>
-
+<footer>
+    <p>© CBDC Markets · GCRI</p>
+</footer>
 </div>
 
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-    // Auto-update "Last Updated" date
-    const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', optionsDate);
+fetch('data/indexData.json')
+.then(response => response.json())
+.then(data => {
+    // Snapshot values
+    document.getElementById('currentValue').textContent = data.gcri.currentValue;
+    document.getElementById('baseValue').textContent = data.gcri.baseValue;
+    document.getElementById('lastUpdated').textContent = data.lastUpdated;
 
-    // Chart.js for GCRI
+    // Chart
     const ctx = document.getElementById('gcriChart').getContext('2d');
-    const gcriChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026'],
+            labels: data.gcri.labels,
             datasets: [{
                 label: 'GCRI Index Value',
-                data: [980, 995, 1005, 1015, 1020, 1034],
+                data: data.gcri.values,
                 borderColor: '#0073e6',
                 backgroundColor: 'rgba(0, 115, 230, 0.1)',
                 borderWidth: 2,
@@ -140,8 +119,8 @@
         options: {
             responsive: true,
             plugins: {
-                legend: { display: true, position: 'top', labels:{font:{size:14}} },
-                title: { display: true, text: 'Global CBDC Readiness Index (GCRI) Performance', font:{size:18} }
+                legend: { display: true, position: 'top' },
+                title: { display: true, text: 'Global CBDC Readiness Index (GCRI) Performance' }
             },
             scales: {
                 y: { beginAtZero: false, title: { display: true, text: 'Index Value' } },
@@ -149,7 +128,7 @@
             }
         }
     });
+});
 </script>
-
 </body>
 </html>
