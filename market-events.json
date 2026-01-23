@@ -1,0 +1,7 @@
+[
+  {"event":"Interest rate hike", "impact":"Corporate Bond prices drop 2%"},
+  {"event":"Commodity supply shortage", "impact":"Oil token price +5%"},
+  {"event":"Real estate bubble", "impact":"RWA tokens lose 3%"},
+  {"event":"Equity rally", "impact":"Equity token prices rise 4%"},
+  {"event":"FX volatility", "impact":"Cross-border CBDC conversion rate fluctuates"}
+]
