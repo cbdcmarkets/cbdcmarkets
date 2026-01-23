@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cross-Border CBDC Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bonds-sim.html">Bonds</a>
+    <a href="stocks-sim.html">Stocks</a>
+    <a href="commodities-sim.html">Commodities</a>
+    <a href="rwas-sim.html">RWAs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>🌍 Cross-Border CBDC Simulator</h1>
+  <p>Simulate CBDC settlement between two central banks with instant FX conversion</p>
+</section>
+
+<section class="simulator">
+
+  <div class="sim-panel">
+    <h3>CBDC Wallet</h3>
+    <p id="balance"></p>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Select CBDC Pair</h3>
+    <select id="cbdcPair">
+      <option value="1.0">e₹ → e$ (1:1)</option>
+      <option value="0.012">e₹ → e€ (1:0.012)</option>
+      <option value="0.15">e$ → e₹ (1:0.15)</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Select Asset</h3>
+    <select id="asset">
+      <option value="100000">Government Bond – ₹100,000</option>
+      <option value="150000">Corporate Bond – ₹150,000</option>
+      <option value="50000">Equity Token – ₹50,000</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <button onclick="simulateCrossBorder()">Execute Cross-Border Trade</button>
+  </div>
+
+  <div class="sim-panel log" id="log">
+    System online. Cross-border CBDC rails active.
+  </div>
+
+  <div class="sim-panel scoreboard" id="scoreboard">
+    <h3>Settlement Scoreboard</h3>
+    <p>Trades executed: 0</p>
+    <p>Total CBDC moved: 0</p>
+  </div>
+
+</section>
+
+<script src="simulator.js"></script>
+<script src="crossborder.js"></script>
+<script src="role-select.js"></script>
+</body>
+</html>
