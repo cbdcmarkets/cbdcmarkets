@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T41XBM2PP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2T41XBM2PP');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBDC Markets | Tokenised Asset Exchange</title>
@@ -21,10 +11,11 @@
 <header>
   <div class="logo">CBDC<span>Markets</span></div>
   <nav>
-    <a href="bonds-sim.html">Bonds</a>
-    <a href="stocks-sim.html">Stocks</a>
-    <a href="commodities-sim.html">Commodities</a>
-    <a href="rwas-sim.html">RWAs</a>
+    <a href="#bonds">Bonds</a>
+    <a href="#stocks">Stocks</a>
+    <a href="#commodities">Commodities</a>
+    <a href="#rwas">RWAs</a>
+    <a href="#crossborder">Cross-Border</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
@@ -37,34 +28,98 @@
   </p>
 </section>
 
-<section class="market">
-  <h2>🏦 Tokenised Bonds</h2>
-  <p>Fractional, programmable, CBDC-settled fixed income</p>
-  <a class="sim-btn" href="bonds-sim.html">▶ Launch Bonds Simulation</a>
+<!-- Bonds -->
+<section class="market" id="bonds">
+  <h2>🏦 Tokenised Bonds Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Government Bonds</h3>
+      <p>Fractional sovereign bonds issued on DLT.</p>
+      <span>Settlement: CBDC (T+0)</span>
+      <a class="sim-btn" href="bonds-sim.html">▶ Launch Simulation</a>
+    </div>
+    <div class="card">
+      <h3>Corporate Bonds</h3>
+      <p>Programmable coupons and automated compliance.</p>
+      <span>Settlement: CBDC Smart Contracts</span>
+      <a class="sim-btn" href="bonds-sim.html">▶ Launch Simulation</a>
+    </div>
+  </div>
 </section>
 
-<section class="market">
-  <h2>📈 Tokenised Stocks</h2>
-  <p>24/7 equity markets with atomic CBDC settlement</p>
-  <a class="sim-btn" href="stocks-sim.html">▶ Launch Stocks Simulation</a>
+<!-- Stocks -->
+<section class="market" id="stocks">
+  <h2>📈 Tokenised Stocks Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Equity Tokens</h3>
+      <p>24/7 trading of compliant tokenised shares.</p>
+      <span>Settlement: CBDC Atomic Swap</span>
+      <a class="sim-btn" href="stocks-sim.html">▶ Launch Simulation</a>
+    </div>
+    <div class="card">
+      <h3>Index Baskets</h3>
+      <p>AI-weighted stock baskets settled in CBDC.</p>
+      <span>Settlement: CBDC Clearing</span>
+      <a class="sim-btn" href="stocks-sim.html">▶ Launch Simulation</a>
+    </div>
+  </div>
 </section>
 
-<section class="market">
-  <h2>🛢️ Tokenised Commodities</h2>
-  <p>Gold, energy & agri assets settled via wholesale CBDC</p>
-  <a class="sim-btn" href="commodities-sim.html">▶ Launch Commodities Simulation</a>
+<!-- Commodities -->
+<section class="market" id="commodities">
+  <h2>🛢️ Tokenised Commodities Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gold & Metals</h3>
+      <p>Digitally backed commodity tokens.</p>
+      <span>Settlement: Wholesale CBDC</span>
+      <a class="sim-btn" href="commodities-sim.html">▶ Launch Simulation</a>
+    </div>
+    <div class="card">
+      <h3>Energy & Agri</h3>
+      <p>Oil, gas, and agricultural commodities.</p>
+      <span>Settlement: Cross-border CBDC</span>
+      <a class="sim-btn" href="commodities-sim.html">▶ Launch Simulation</a>
+    </div>
+  </div>
 </section>
 
-<section class="market">
-  <h2>🧱 Tokenised RWAs</h2>
-  <p>Real estate, invoices & trade finance on CBDC rails</p>
-  <a class="sim-btn" href="rwas-sim.html">▶ Launch RWA Simulation</a>
+<!-- RWAs -->
+<section class="market" id="rwas">
+  <h2>🧱 Tokenised Real-World Assets (RWAs)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Real Estate</h3>
+      <p>Fractional property ownership via tokens.</p>
+      <span>Settlement: Retail CBDC</span>
+      <a class="sim-btn" href="rwas-sim.html">▶ Launch Simulation</a>
+    </div>
+    <div class="card">
+      <h3>Invoices & Credit</h3>
+      <p>On-chain receivables and trade finance.</p>
+      <span>Settlement: Programmable CBDC</span>
+      <a class="sim-btn" href="rwas-sim.html">▶ Launch Simulation</a>
+    </div>
+  </div>
+</section>
+
+<!-- Cross-Border CBDC -->
+<section class="market" id="crossborder">
+  <h2>🌍 Cross-Border CBDC Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Multi-CBDC Settlement</h3>
+      <p>Simulate instant settlement and FX conversion between CBDCs.</p>
+      <span>Settlement: T+0 cross-border CBDC</span>
+      <a class="sim-btn" href="crossborder-sim.html">▶ Launch Simulation</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 CBDC Markets · Tokenised Economy Infrastructure</p>
+  <p>© 2026 CBDC Markets · Digital Money & Tokenised Asset Research</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
