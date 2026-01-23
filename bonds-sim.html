@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Bonds Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,15 +12,20 @@
   <div class="logo">CBDC<span>Markets</span></div>
   <nav>
     <a href="index.html">Home</a>
+    <a href="stocks-sim.html">Stocks</a>
+    <a href="commodities-sim.html">Commodities</a>
+    <a href="rwas-sim.html">RWAs</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>🕹️ Tokenised Bonds Simulator</h1>
+  <p>Simulate fractional and corporate bonds settled instantly using CBDC</p>
 </section>
 
 <section class="simulator">
+
   <div class="sim-panel">
     <h3>CBDC Wallet</h3>
     <p id="balance"></p>
@@ -28,21 +34,46 @@
   <div class="sim-panel">
     <h3>Select Bond</h3>
     <select id="asset">
-      <option value="100000">Govt Bond – ₹100,000</option>
+      <option value="100000">Government Bond – ₹100,000</option>
       <option value="250000">Corporate Bond – ₹250,000</option>
     </select>
   </div>
 
   <div class="sim-panel">
-    <button onclick="buyAsset()">Buy</button>
-    <button onclick="sellAsset()">Sell</button>
+    <button onclick="buyAsset()">Buy Bond</button>
+    <button onclick="sellAsset()">Sell Bond</button>
   </div>
 
   <div class="sim-panel log" id="log">
-    System online. CBDC rails active.
+    System online. CBDC bond settlement engine active.
   </div>
+
+  <div class="sim-panel scoreboard" id="scoreboard">
+    <h3>Settlement Scoreboard</h3>
+    <p>Trades executed: 0</p>
+    <p>Total CBDC moved: 0</p>
+  </div>
+
 </section>
 
 <script src="simulator.js"></script>
+<script>
+  // AI Market Events for Bonds
+  fetch("market-events.json")
+    .then(res => res.json())
+    .then(events => {
+      setInterval(() => {
+        const event = events[Math.floor(Math.random() * events.length)];
+        const logEl = document.getElementById("log");
+        const balanceEl = document.getElementById("balance");
+        let balance = parseInt(balanceEl.innerText.replace(/[^\d]/g,''));
+        logEl.innerHTML += `<br>⚡ Market Shock: ${event.event} → ${event.impact}`;
+        if(event.impact.includes("drop")) { balance -= Math.floor(Math.random() * 5000); }
+        if(event.impact.includes("rise")) { balance += Math.floor(Math.random() * 7000); }
+        balanceEl.innerText = balance.toLocaleString() + " e₹";
+      }, 15000);
+    });
+</script>
+
 </body>
 </html>
