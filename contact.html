@@ -38,24 +38,27 @@
       <ul>
         <li><strong>Email:</strong> cbdcmarkets@gmail.com</li>
         <li><strong>Website:</strong> https://cbdcmarkets.com</li>
-        <li><strong>Focus:</strong> CBDC Markets </li>
+        <li><strong>Focus:</strong> CBDC Markets</li>
       </ul>
     </div>
 
     <div class="contact-form">
       <h2>Send a Message</h2>
 
-      <!-- Formspree / external handler can be added later -->
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+      <!-- Formspree Integration -->
+      <form action="https://formspree.io/f/mbddkpwj" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <!-- Optional subject -->
+        <input type="hidden" name="_subject" value="New message from CBDC Markets" />
+
         <button type="submit">Submit</button>
       </form>
 
       <p class="note">
-        * This form is currently informational.  
-        Backend or secure form integration can be added later.
+        Messages are securely delivered to CBDC Markets via Formspree.
       </p>
     </div>
 
