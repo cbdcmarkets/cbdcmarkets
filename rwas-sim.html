@@ -35,14 +35,13 @@
     <h3>Select RWA</h3>
     <select id="asset">
       <option value="300000">Real Estate Fraction – ₹300,000</option>
-      <option value="120000">Invoice / Receivable Token – ₹120,000</option>
+      <option value="120000">Invoice Token – ₹120,000</option>
       <option value="500000">Infrastructure Asset Token – ₹500,000</option>
     </select>
   </div>
 
   <div class="sim-panel">
-    <h3>Settlement Actions</h3>
-    <button onclick="buyAsset()">Lock CBDC & Acquire</button>
+    <button onclick="buyAsset()">Acquire Asset</button>
     <button onclick="sellAsset()">Release Asset</button>
   </div>
 
@@ -50,12 +49,32 @@
     Legal wrappers loaded. Programmable CBDC escrow ready.
   </div>
 
+  <div class="sim-panel scoreboard" id="scoreboard">
+    <h3>Settlement Scoreboard</h3>
+    <p>Trades executed: 0</p>
+    <p>Total CBDC moved: 0</p>
+  </div>
+
 </section>
 
-<footer>
-  <p>© 2026 CBDC Markets · Tokenised RWA Simulation</p>
-</footer>
-
 <script src="simulator.js"></script>
+<script>
+  // AI Market Events for RWAs
+  fetch("market-events.json")
+    .then(res => res.json())
+    .then(events => {
+      setInterval(() => {
+        const event = events[Math.floor(Math.random() * events.length)];
+        const logEl = document.getElementById("log");
+        const balanceEl = document.getElementById("balance");
+        let balance = parseInt(balanceEl.innerText.replace(/[^\d]/g,''));
+        logEl.innerHTML += `<br>⚡ Market Shock: ${event.event} → ${event.impact}`;
+        if(event.impact.includes("drop")) { balance -= Math.floor(Math.random() * 5000); }
+        if(event.impact.includes("rise")) { balance += Math.floor(Math.random() * 7000); }
+        balanceEl.innerText = balance.toLocaleString() + " e₹";
+      }, 15000);
+    });
+</script>
+
 </body>
 </html>
