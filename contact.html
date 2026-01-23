@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M77NQCPK2H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M77NQCPK2H');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | CBDC Markets</title>
-    <meta name="description" content="Contact CBDC Markets to get in touch with our team or submit queries regarding central bank digital currency indices.">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | CBDC Markets</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Header / Navigation -->
-<header class="site-header">
-    <div class="nav-container">
-        <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html">GCRI Index</a></li>
-                <li><a href="brics.html">BRICS CBDC Index</a></li>
-                <li><a href="methodology.html">Methodology</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="index.html">Marketplace</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
 </header>
 
-<div class="container">
+<section class="hero small">
+  <h1>Contact CBDC Markets</h1>
+  <p>
+    Reach out for research collaboration, platform discussions,
+    partnerships, or institutional inquiries related to CBDCs and tokenised markets.
+  </p>
+</section>
 
-    <header>
-        <h1>Contact CBDC Markets</h1>
-        <p>We welcome questions, feedback, or inquiries regarding our CBDC indices and research.</p>
-    </header>
+<section class="contact-section">
+  <div class="contact-grid">
 
-    <section>
-        <h2>Get in Touch</h2>
-        <p>You can reach us via the form below.</p>
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>
+        CBDC Markets is a research-driven platform exploring
+        central bank digital currencies as a settlement layer
+        for tokenised bonds, stocks, commodities, and real-world assets.
+      </p>
 
-        <!-- Contact Form (Formspree example) -->
-        <form 
-            action="https://formspree.io/f/mbddkpwj" 
-            method="POST"
-            >
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Your Name" required style="width:100%;padding:8px;margin-bottom:12px;"><br>
+      <ul>
+        <li><strong>Email:</strong> contact@cbdcmarkets.com</li>
+        <li><strong>Website:</strong> https://cbdcmarkets.com</li>
+        <li><strong>Focus:</strong> CBDC · Tokenisation · Market Infrastructure</li>
+      </ul>
+    </div>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Your Email" required style="width:100%;padding:8px;margin-bottom:12px;"><br>
+    <div class="contact-form">
+      <h2>Send a Message</h2>
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="6" placeholder="Your Message" required style="width:100%;padding:8px;margin-bottom:12px;"></textarea><br>
+      <!-- Formspree / external handler can be added later -->
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
 
-            <button type="submit" style="padding:10px 20px;background-color:#0073e6;color:white;border:none;cursor:pointer;">Send Message</button>
-        </form>
-    </section>
+      <p class="note">
+        * This form is currently informational.  
+        Backend or secure form integration can be added later.
+      </p>
+    </div>
 
-    <section>
-        <h2>Our Location</h2>
-        <p>
-            CBDC Markets is a virtual research and analytics platform. For partnership inquiries or media contact, please use the email above.
-        </p>
-    </section>
+  </div>
+</section>
 
-    <footer>
-        <p>© CBDC Markets · All rights reserved</p>
-        <p>CBDC Markets provides informational reference data only. This page does not constitute financial advice.</p>
-    </footer>
-
-</div>
+<footer>
+  <p>© 2026 CBDC Markets · Digital Money & Tokenised Asset Research</p>
+</footer>
 
 </body>
 </html>
