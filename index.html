@@ -1,143 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M77NQCPK2H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M77NQCPK2H');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global CBDC Readiness Index (GCRI) | CBDC Markets</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBDC Markets | Tokenised Asset Exchange</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Header / Navigation -->
-<header class="site-header">
-<div class="nav-container">
-    <h1 class="logo"><a href="index.html">CBDC Markets</a></h1>
-    <nav>
-        <ul class="nav-menu">
-            <li><a href="index.html">GCRI Index</a></li>
-            <li><a href="brics.html">BRICS CBDC Index</a></li>
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
-
-<div class="container">
 <header>
-    <h1>Global CBDC Readiness Index (GCRI)</h1>
-    <p>An independent benchmark tracking CBDC progress globally.</p>
-    <p><a href="methodology.html">View Methodology</a></p>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="#bonds">Bonds</a>
+    <a href="#stocks">Stocks</a>
+    <a href="#commodities">Commodities</a>
+    <a href="#rwas">RWAs</a>
+  </nav>
 </header>
 
-<section class="snapshot">
-    <div class="box">
-        <strong>Current Index Value</strong>
-        <span id="currentValue"></span>
-    </div>
-    <div class="box">
-        <strong>Base Value</strong>
-        <span id="baseValue"></span>
-    </div>
-    <div class="box">
-        <strong>Last Updated</strong>
-        <span id="lastUpdated"></span>
-    </div>
-    <div class="box">
-        <strong>Update Frequency</strong>
-        Quarterly
-    </div>
+<section class="hero">
+  <h1>CBDC as the Medium of Exchange</h1>
+  <p>
+    A next-generation marketplace for tokenised bonds, stocks, commodities,
+    and real-world assets settled instantly using central bank digital currencies.
+  </p>
 </section>
 
-<section>
-    <h2>Index Performance</h2>
-    <canvas id="gcriChart" width="800" height="400"></canvas>
+<section class="market" id="bonds">
+  <h2>🏦 Tokenised Bonds Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Government Bonds</h3>
+      <p>Fractional sovereign bonds issued on DLT.</p>
+      <span>Settlement: CBDC (T+0)</span>
+    </div>
+    <div class="card">
+      <h3>Corporate Bonds</h3>
+      <p>Programmable coupons and automated compliance.</p>
+      <span>Settlement: CBDC Smart Contracts</span>
+    </div>
+  </div>
 </section>
 
-<section>
-    <h2>Index Constituents</h2>
-    <table>
-        <thead>
-            <tr><th>Country</th><th>CBDC Status</th><th>Composite Score</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>China</td><td>Live</td><td>89</td></tr>
-            <tr><td>India</td><td>Pilot</td><td>74</td></tr>
-            <tr><td>Brazil</td><td>Pilot</td><td>71</td></tr>
-            <tr><td>Nigeria</td><td>Live</td><td>78</td></tr>
-            <tr><td>Bahamas</td><td>Live</td><td>81</td></tr>
-            <tr><td>Russia</td><td>Pilot</td><td>68</td></tr>
-            <tr><td>South Africa</td><td>Research</td><td>42</td></tr>
-            <tr><td>Sweden</td><td>Pilot</td><td>65</td></tr>
-            <tr><td>Singapore</td><td>Pilot</td><td>75</td></tr>
-            <tr><td>Canada</td><td>Research</td><td>55</td></tr>
-            <tr><td>France</td><td>Research</td><td>50</td></tr>
-            <tr><td>Australia</td><td>Research</td><td>53</td></tr>
-        </tbody>
-    </table>
+<section class="market" id="stocks">
+  <h2>📈 Tokenised Stocks Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Equity Tokens</h3>
+      <p>24/7 trading of compliant tokenised shares.</p>
+      <span>Settlement: CBDC Atomic Swap</span>
+    </div>
+    <div class="card">
+      <h3>Index Baskets</h3>
+      <p>AI-weighted stock baskets settled in CBDC.</p>
+      <span>Settlement: CBDC Clearing</span>
+    </div>
+  </div>
 </section>
 
-<section>
-    <h2>Index Interpretation</h2>
-    <p>The GCRI reflects CBDC progress globally. China leads with live deployment; others follow in pilot/research stages.</p>
+<section class="market" id="commodities">
+  <h2>🛢️ Tokenised Commodities Market</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gold & Metals</h3>
+      <p>Digitally backed commodity tokens.</p>
+      <span>Settlement: Wholesale CBDC</span>
+    </div>
+    <div class="card">
+      <h3>Energy & Agri</h3>
+      <p>Oil, gas, and agricultural commodities.</p>
+      <span>Settlement: Cross-border CBDC</span>
+    </div>
+  </div>
+</section>
+
+<section class="market" id="rwas">
+  <h2>🧱 Tokenised Real-World Assets (RWAs)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Real Estate</h3>
+      <p>Fractional property ownership via tokens.</p>
+      <span>Settlement: Retail CBDC</span>
+    </div>
+    <div class="card">
+      <h3>Invoices & Credit</h3>
+      <p>On-chain receivables and trade finance.</p>
+      <span>Settlement: Programmable CBDC</span>
+    </div>
+  </div>
 </section>
 
 <footer>
-    <p>© CBDC Markets · GCRI</p>
+  <p>© 2026 CBDC Markets · Educational & Research Platform</p>
 </footer>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-fetch('data/indexData.json')
-.then(response => response.json())
-.then(data => {
-    // Snapshot values
-    document.getElementById('currentValue').textContent = data.gcri.currentValue;
-    document.getElementById('baseValue').textContent = data.gcri.baseValue;
-    document.getElementById('lastUpdated').textContent = data.lastUpdated;
-
-    // Chart
-    const ctx = document.getElementById('gcriChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: data.gcri.labels,
-            datasets: [{
-                label: 'GCRI Index Value',
-                data: data.gcri.values,
-                borderColor: '#0073e6',
-                backgroundColor: 'rgba(0, 115, 230, 0.1)',
-                borderWidth: 2,
-                tension: 0.3,
-                fill: true,
-                pointRadius: 4,
-                pointBackgroundColor: '#0073e6'
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { display: true, position: 'top' },
-                title: { display: true, text: 'Global CBDC Readiness Index (GCRI) Performance' }
-            },
-            scales: {
-                y: { beginAtZero: false, title: { display: true, text: 'Index Value' } },
-                x: { title: { display: true, text: 'Month' } }
-            }
-        }
-    });
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
