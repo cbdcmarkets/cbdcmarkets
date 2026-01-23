@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commodities Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bonds-sim.html">Bonds</a>
+    <a href="stocks-sim.html">Stocks</a>
+    <a href="rwas-sim.html">RWAs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>🕹️ Tokenised Commodities Simulator</h1>
+  <p>Trade real-world commodities using wholesale & cross-border CBDC</p>
+</section>
+
+<section class="simulator">
+
+  <div class="sim-panel">
+    <h3>CBDC Wallet</h3>
+    <p id="balance"></p>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Select Commodity</h3>
+    <select id="asset">
+      <option value="100000">Gold Token (10g backed) – ₹100,000</option>
+      <option value="200000">Crude Oil Contract – ₹200,000</option>
+      <option value="120000">Agricultural Basket – ₹120,000</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Trade Actions</h3>
+    <button onclick="buyAsset()">Buy Commodity</button>
+    <button onclick="sellAsset()">Sell Commodity</button>
+  </div>
+
+  <div class="sim-panel log" id="log">
+    Commodity vaults verified. Wholesale CBDC rails online.
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CBDC Markets · Tokenised Commodities Simulation</p>
+</footer>
+
+<script src="simulator.js"></script>
+</body>
+</html>
