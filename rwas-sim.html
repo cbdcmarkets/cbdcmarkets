@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RWA Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bonds-sim.html">Bonds</a>
+    <a href="stocks-sim.html">Stocks</a>
+    <a href="commodities-sim.html">Commodities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>🕹️ Tokenised Real-World Assets Simulator</h1>
+  <p>Experience CBDC-settled real estate, invoices, and trade finance</p>
+</section>
+
+<section class="simulator">
+
+  <div class="sim-panel">
+    <h3>CBDC Wallet</h3>
+    <p id="balance"></p>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Select RWA</h3>
+    <select id="asset">
+      <option value="300000">Real Estate Fraction – ₹300,000</option>
+      <option value="120000">Invoice / Receivable Token – ₹120,000</option>
+      <option value="500000">Infrastructure Asset Token – ₹500,000</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Settlement Actions</h3>
+    <button onclick="buyAsset()">Lock CBDC & Acquire</button>
+    <button onclick="sellAsset()">Release Asset</button>
+  </div>
+
+  <div class="sim-panel log" id="log">
+    Legal wrappers loaded. Programmable CBDC escrow ready.
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CBDC Markets · Tokenised RWA Simulation</p>
+</footer>
+
+<script src="simulator.js"></script>
+</body>
+</html>
