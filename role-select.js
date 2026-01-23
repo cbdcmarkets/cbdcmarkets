@@ -1,14 +1,14 @@
-// Role selection popup
+// ROLE SELECTION POPUP
 const body = document.body;
 const roleModal = document.createElement("div");
 roleModal.id = "roleModal";
-roleModal.style.display = "flex";
 roleModal.style.position = "fixed";
 roleModal.style.top = 0;
 roleModal.style.left = 0;
 roleModal.style.right = 0;
 roleModal.style.bottom = 0;
 roleModal.style.background = "rgba(0,0,0,0.85)";
+roleModal.style.display = "flex";
 roleModal.style.justifyContent = "center";
 roleModal.style.alignItems = "center";
 roleModal.style.zIndex = 1000;
@@ -21,12 +21,14 @@ roleModal.innerHTML = `
 `;
 body.appendChild(roleModal);
 
+let userRole = "investor"; // default
+
 function selectRole(role) {
+  userRole = role;
   roleModal.style.display = "none";
   if(role === "centralBank") {
-    alert("Central Bank mode enabled: You can adjust interest rates and liquidity!");
-    // Optional: Implement CB logic later
+    alert("Central Bank mode: You can influence liquidity, settlement, and shocks.");
   } else {
-    alert("Investor mode: You can trade assets normally.");
+    alert("Investor mode: You can trade normally and react to market events.");
   }
 }
