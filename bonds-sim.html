@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonds Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="bonds.html">Bonds</a>
+    <a href="stocks.html">Stocks</a>
+    <a href="commodities.html">Commodities</a>
+    <a href="rwas.html">RWAs</a>
+  </nav>
+</header>
+
+<section class="hero small">
+  <h1>🕹️ Tokenised Bonds Simulator</h1>
+  <p>Simulate CBDC-settled bond trades in real time</p>
+</section>
+
+<section class="simulator">
+
+  <div class="sim-panel">
+    <h2>Player Wallet</h2>
+    <p><strong>CBDC Balance:</strong> <span id="balance">1,000,000</span> e₹</p>
+  </div>
+
+  <div class="sim-panel">
+    <h2>Select Bond</h2>
+    <select id="asset">
+      <option value="100000">10Y Government Bond – ₹100,000</option>
+      <option value="250000">Corporate AAA Bond – ₹250,000</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <h2>Trade Action</h2>
+    <button onclick="buyAsset()">Buy Bond</button>
+    <button onclick="sellAsset()">Sell Bond</button>
+  </div>
+
+  <div class="sim-panel log">
+    <h2>Settlement Console</h2>
+    <div id="log">System ready. CBDC rails active.</div>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CBDC Markets · Simulation Environment</p>
+</footer>
+
+<script src="simulator.js"></script>
+</body>
+</html>
