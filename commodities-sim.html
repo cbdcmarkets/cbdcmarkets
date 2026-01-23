@@ -34,14 +34,13 @@
   <div class="sim-panel">
     <h3>Select Commodity</h3>
     <select id="asset">
-      <option value="100000">Gold Token (10g backed) – ₹100,000</option>
+      <option value="100000">Gold Token – ₹100,000</option>
       <option value="200000">Crude Oil Contract – ₹200,000</option>
       <option value="120000">Agricultural Basket – ₹120,000</option>
     </select>
   </div>
 
   <div class="sim-panel">
-    <h3>Trade Actions</h3>
     <button onclick="buyAsset()">Buy Commodity</button>
     <button onclick="sellAsset()">Sell Commodity</button>
   </div>
@@ -50,12 +49,32 @@
     Commodity vaults verified. Wholesale CBDC rails online.
   </div>
 
+  <div class="sim-panel scoreboard" id="scoreboard">
+    <h3>Settlement Scoreboard</h3>
+    <p>Trades executed: 0</p>
+    <p>Total CBDC moved: 0</p>
+  </div>
+
 </section>
 
-<footer>
-  <p>© 2026 CBDC Markets · Tokenised Commodities Simulation</p>
-</footer>
-
 <script src="simulator.js"></script>
+<script>
+  // AI Market Events for Commodities
+  fetch("market-events.json")
+    .then(res => res.json())
+    .then(events => {
+      setInterval(() => {
+        const event = events[Math.floor(Math.random() * events.length)];
+        const logEl = document.getElementById("log");
+        const balanceEl = document.getElementById("balance");
+        let balance = parseInt(balanceEl.innerText.replace(/[^\d]/g,''));
+        logEl.innerHTML += `<br>⚡ Market Shock: ${event.event} → ${event.impact}`;
+        if(event.impact.includes("drop")) { balance -= Math.floor(Math.random() * 5000); }
+        if(event.impact.includes("rise")) { balance += Math.floor(Math.random() * 7000); }
+        balanceEl.innerText = balance.toLocaleString() + " e₹";
+      }, 15000);
+    });
+</script>
+
 </body>
 </html>
