@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stocks Simulation | CBDC Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">CBDC<span>Markets</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bonds-sim.html">Bonds</a>
+    <a href="commodities-sim.html">Commodities</a>
+    <a href="rwas-sim.html">RWAs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>🕹️ Tokenised Stocks Simulator</h1>
+  <p>Simulate 24/7 equity trading settled instantly using CBDC</p>
+</section>
+
+<section class="simulator">
+
+  <div class="sim-panel">
+    <h3>CBDC Wallet</h3>
+    <p id="balance"></p>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Select Stock Asset</h3>
+    <select id="asset">
+      <option value="50000">Equity Token (Single Stock) – ₹50,000</option>
+      <option value="150000">Index Basket (AI Weighted) – ₹150,000</option>
+      <option value="300000">Large Cap Equity Bundle – ₹300,000</option>
+    </select>
+  </div>
+
+  <div class="sim-panel">
+    <h3>Trade Actions</h3>
+    <button onclick="buyAsset()">Buy Token</button>
+    <button onclick="sellAsset()">Sell Token</button>
+  </div>
+
+  <div class="sim-panel log" id="log">
+    Market open. CBDC equity settlement engine active.
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CBDC Markets · Tokenised Equity Simulation</p>
+</footer>
+
+<script src="simulator.js"></script>
+</body>
+</html>
