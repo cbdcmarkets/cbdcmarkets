@@ -1,38 +1,38 @@
 let balance = 1000000;
-const balanceEl = document.getElementById("balance");
-const logEl = document.getElementById("log");
+
+function updateBalance() {
+  document.getElementById("balance").innerText =
+    balance.toLocaleString() + " e₹";
+}
+
+function log(msg) {
+  const logBox = document.getElementById("log");
+  logBox.innerHTML += `<br>➤ ${msg}`;
+  logBox.scrollTop = logBox.scrollHeight;
+}
 
 function buyAsset() {
   const price = parseInt(document.getElementById("asset").value);
-
   if (balance >= price) {
-    log(`Initiating CBDC atomic swap...`);
+    log("Initiating CBDC atomic settlement...");
     setTimeout(() => {
       balance -= price;
       updateBalance();
-      log(`✔ Bond token acquired. Settlement completed (T+0).`);
+      log("✔ Asset token acquired. T+0 settlement complete.");
     }, 800);
   } else {
-    log(`✖ Insufficient CBDC balance.`);
+    log("✖ Insufficient CBDC balance.");
   }
 }
 
 function sellAsset() {
   const price = parseInt(document.getElementById("asset").value);
-
-  log(`Processing token redemption...`);
+  log("Redeeming token...");
   setTimeout(() => {
     balance += price;
     updateBalance();
-    log(`✔ CBDC credited. Asset redeemed successfully.`);
+    log("✔ CBDC credited to wallet.");
   }, 800);
 }
 
-function updateBalance() {
-  balanceEl.innerText = balance.toLocaleString();
-}
-
-function log(message) {
-  logEl.innerHTML += `<br>➤ ${message}`;
-  logEl.scrollTop = logEl.scrollHeight;
-}
+document.addEventListener("DOMContentLoaded", updateBalance);
